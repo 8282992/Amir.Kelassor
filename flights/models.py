@@ -18,6 +18,11 @@ class Flight (models.Model):
     start = models.CharField(max_length=10)
     destination = models.CharField(max_length=10)
 
+    def __str__(self) -> str :
+        return self.flight_number
+    
+    class Meta ():
+        verbose_name ="kelassor flight"
 
 class Tickect(models.Model):
     name = models.CharField(max_length=10)
@@ -25,3 +30,6 @@ class Tickect(models.Model):
     national_id = models.IntegerField()
     seat_number = models.IntegerField()
     email = models.EmailField()
+
+
+

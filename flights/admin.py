@@ -1,19 +1,21 @@
 from django.contrib.admin import ModelAdmin , register
 from .models import Flight , Airport
+
+
+
 @register(Flight)
 class FlightAdmin(ModelAdmin):
-    pass
+    autocomplete_fields = ["origin"]
 
 
 
 @register(Airport)
 class AirportAdmin(ModelAdmin):
-    pass
+    list_display = ["name" , "no" , "city" , "phone_number" ]
+    search_fields = ["name"]
+    list_filter = ["name" , "city"]
 
 
 
-@register(Tickect)
-class TickectAdmin(ModelAdmin):
-    pass
 
 
